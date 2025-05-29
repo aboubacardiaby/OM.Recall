@@ -17,7 +17,9 @@ using static System.Net.Mime.MediaTypeNames;
 namespace OM.Recall.LocationsAPI.Tests
 {
     public class LocationServiceTests : IClassFixture<DatabaseFixture>
-    {
+    { // <summary>
+        /// Tests for the LocationService class
+        /// </summary>
         private readonly ApplicationDbContext _context;
         private readonly Mock<ILogger<LocationService>> _mockLogger;
         private readonly LocationService _service;
@@ -30,7 +32,7 @@ namespace OM.Recall.LocationsAPI.Tests
 
             // Clean database before each test
             _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
+            
         }
 
         [Fact]
