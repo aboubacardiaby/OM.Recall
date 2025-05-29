@@ -172,6 +172,11 @@ public class LocationsController : ControllerBase
     [ProducesResponseType(400)]
     public async Task<ActionResult<BulkInsertResponse>> BulkInsertFromJson([FromBody] string jsonContent)
     {
+        // <summary>
+        /// Bulk insert locations from JSON content
+        /// </summary>
+        if (string.IsNullOrWhiteSpace(jsonContent))
+            return BadRequest("JSON content cannot be empty");
         try
         {
             if (string.IsNullOrWhiteSpace(jsonContent))
